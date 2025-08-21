@@ -2962,6 +2962,15 @@ mkdirp@^0.5.1:
   dependencies:
     minimist "^1.2.5"
 
+modern-slavery-schema@^1.6.0-submitted-at-beta.1:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/modern-slavery-schema/-/modern-slavery-schema-1.6.0.tgz#3d7956d09d3ce6310fe9c19ebb419da36d4f6f8d"
+  integrity sha512-WJDGNcDooTYiEO8o73ASCNFAkjbjp6TdfCJi+GOlMqnbE42oVAeKaUHnTD6sPi1FiMONA5cCMRioWC87naCzlw==
+  dependencies:
+    knex "^0.95.11"
+    knex-migrate "^1.7.4"
+    pg "^8.7.1"
+
 module-deps@^6.2.3:
   version "6.2.3"
   resolved "https://registry.yarnpkg.com/module-deps/-/module-deps-6.2.3.tgz#15490bc02af4b56cf62299c7c17cba32d71a96ee"
@@ -2998,15 +3007,6 @@ morgan@^1.10.0:
     depd "~2.0.0"
     on-finished "~2.3.0"
     on-headers "~1.0.2"
-
-ms-schema@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/ms-schema/-/ms-schema-1.2.0.tgz#3dd6c192d51d8d388465ab61c81aa68e418af284"
-  integrity sha512-uxaprd2p8GNJTYI9nJMylA9cTUyBg8uaPdlEqO/gX6J7hP7QlnmN95NFegtg0XrNkDTC8Cfc9YZhso/43PvTyA==
-  dependencies:
-    knex "^0.95.11"
-    knex-migrate "^1.7.4"
-    pg "^8.7.1"
 
 ms@2.0.0:
   version "2.0.0"
