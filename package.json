@@ -11,7 +11,7 @@
     "start:dev": "hof-build watch",
     "debug": "node --inspect server.js",
     "test:lint": "eslint . --config ./node_modules/eslint-config-hof/default.js",
-    "test:snyk": "snyk config set api=5b3446b5-1ece-406a-85fd-e6ba42dc4dec && snyk test",
+    "test:snyk": "snyk config set api=SNYK_TOKEN && snyk test",
     "build": "hof-build",
     "postinstall": "hof-build"
   },
