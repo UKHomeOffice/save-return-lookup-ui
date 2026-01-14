@@ -2,8 +2,24 @@
 version: v1.19.0
 # ignores vulnerabilities until expiry date; change duration by modifying expiry date
 ignore:
-  SNYK-JS-REQUEST-1314897:
-    - hof > request:
-        reason: Need to replace request in HOF
-        expires: '2022-09-18T14:58:46.388Z'
+  SNYK-JS-INFLIGHT-6095116:
+    - '*':
+      reason: No update available.
+      expires: '2026-06-07T00:00:00.000Z'
+  SNYK-JS-ELLIPTIC-8187303:
+     - '*':
+       reason: No direct upgrade or patch available
+       expires: '2026-06-07T00:00:00.000Z'
+  SNYK-JS-NODEMAILER-13378253:
+    - '*':
+      reason: HOF framework needs updating to use nodemailer@7.0.7
+      expires: '2026-06-07T00:00:00.000Z'
+  SNYK-JS-NODEMAILER-14157156:
+    - '*':
+      reason: HOF framework needs updating to use nodemailer@7.0.11
+      expires: '2026-06-07T00:00:00.000Z'
+  SNYK-JS-MARKDOWNIT-6483324:
+    - hof > markdown-it:
+      reason: Need to update markdown-it in HOF to version 13.0.2.
+      expires: '2026-06-07T00:00:00.000Z'
 patch: {}
