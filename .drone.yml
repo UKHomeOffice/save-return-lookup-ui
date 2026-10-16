@@ -169,7 +169,6 @@ steps:
       event: [push, pull_request]
     depends_on:
       - linting
-      - unit_tests
       - sonar_scanner
 
   - name: image_to_quay
