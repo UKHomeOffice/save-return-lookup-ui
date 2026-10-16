@@ -197,6 +197,7 @@ steps:
         memory: 1024Mi
     environment:
       IMAGE_NAME: $${IMAGE_REPO}:$${DRONE_COMMIT_SHA}
+      SERVICE_URL: https://acp-trivy-helm.acp-trivy.svc.cluster.local:443
       SEVERITY: MEDIUM, HIGH,CRITICAL --pkg-types os,library --dependency-tree
       FAIL_ON_DETECTION: true
       IGNORE_UNFIXED: false
@@ -205,6 +206,7 @@ steps:
       - name: dockersock
         path: /root/.dockersock
     when:
+      branch: master
       event: [push, pull_request]
     depends_on:
       - build_image_for_trivy
@@ -283,24 +285,6 @@ steps:
       event: cron
     depends_on:
       - cron_clone_repos
-
-  # Slack notification upon a CRON job fail
-  - name: cron_notify_slack_tear_down_pr_envs
-    pull: if-not-exists
-    image: plugins/slack
-    settings:
-      channel: sas-build
-      failure: ignore
-      icon_url: http://readme.drone.io/0.5/logo_dark.svg
-      icon.url: http://readme.drone.io/0.5/logo_dark.svg
-      template: "CRON Job {{build.deployTo}} of NRM Alerts Service has {{build.status}} - <{{build.link}}|#{{build.number}}> {{#success build.status}}\n  :thumbsup: :thumbsup: :thumbsup:\n{{else}}\n  :x: :x: :x:\n{{/success}} Author: {{build.author}}\n\nDuration: {{since job.started}}\n\nJob: <{{build.link}}|#{{build.number}}>\n\nCommit: {{build.commit}}\n"
-      username: Drone
-      webhook:
-        from_secret: slack_webhook
-    when:
-      cron: tear_down_pr_envs
-      event: cron
-      status: failure
 
   - name: cron_notify_slack_security_scans
     pull: if-not-exists
