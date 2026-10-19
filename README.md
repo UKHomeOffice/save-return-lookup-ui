@@ -13,6 +13,7 @@ You can set the following to specific how you want your results to look:
 - `CLIENT` - This is the database client type. This defaults to postgresql.
 - `DB_HOST`,`DB_USER`,`DB_PASS`,`DB_NAME` - These are production credentials for accessing the relevant database. These default to 'knex' for the user and password, and 'knex_session' for the database name. These are only for local development.
 - `MIGRATIONS_REPO` - A migrations repository containing a knexfile for connecting to a DB. Default to ms-schema which may contain what you need. Test data contained that repo if you need it.
+- `SESSION_SECRET` - needed to comply with `hof-22.12.0` 
 
 ## Local Setup
 The migrations and seeds folders are used by knex to setup a local DB with dummy information for testing the service. These are not used in production where it is assumed a separate DB is setup for knex to connect to that is already setup.
